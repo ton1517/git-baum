@@ -32,5 +32,5 @@ func main() {
 		}
 	}
 
-	fmt.Println(git.Grass())
+	grass(git.Grass())
 }
