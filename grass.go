@@ -18,6 +18,10 @@ func grass(seed map[string]int) {
 	now := time.Now()
 	color := level0("■")
 	lastYear := now.AddDate(-1, 0, 0)
+	for lastYear.Weekday() != time.Saturday {
+		lastYear = lastYear.AddDate(0, 0, -1)
+	}
+
 	for i := 0; !now.Equal(lastYear); i++ {
 		lastYear = lastYear.AddDate(0, 0, 1)
 		date := strings.Split(lastYear.String(), " ")
